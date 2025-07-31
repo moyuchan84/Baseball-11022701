@@ -13,8 +13,7 @@ def test_exception_when_input_is_none(game):
 
 
 def test_exception_when_input_is_unmatched(game):
-    guessNumber = "12"
-    assert_ilegal_argument(game, guessNumber)
+    assert_ilegal_argument(game, "12")
 
 
 def assert_ilegal_argument(game, guessNumber):
