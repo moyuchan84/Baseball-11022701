@@ -1,3 +1,5 @@
+from mimetypes import guess_type
+
 from game_result import GameResult
 
 
@@ -17,6 +19,14 @@ class Game:
         self._assert_illegal_value(guess_number)
         if guess_number == self._question:
             return GameResult(True,3,0)
+        else:
+            strikes, balls = 0,0
+            for g,q in zip(list(guess_number),list(self._question)):
+                if g == q:
+                    strikes+=1
+            return GameResult(solved=False,strikes=strikes,balls=balls)
+
+
         return GameResult(False,0,0)
 
     def _assert_illegal_value(self, guess_number):
