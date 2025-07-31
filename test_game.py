@@ -38,6 +38,4 @@ def test_return_solved_result_if_matched_number(game):
 
 def test_return_solved_result_if_unmatched_number(game):
     game.question = '123'
-    result:GameResult = game.guess('456')
-
-    assert_matched_number(result, False, 0, 0)
+    assert_matched_number(game.guess('456'), False, 0, 0)
