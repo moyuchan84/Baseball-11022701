@@ -15,9 +15,7 @@ def assert_ilegal_argument(game, guessNumber):
 
 
 def test_exception_when_input_is_none(game):
-
-    with pytest.raises(TypeError):
-        game.guess(None)
+    assert_ilegal_argument(game,None)
 
 
 def test_exception_when_input_is_unmatched(game):
