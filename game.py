@@ -1,8 +1,8 @@
 class Game:
     def guess(self, guessNumber):
-        self.assert_illegal_value(guessNumber)
+        self._assert_illegal_value(guessNumber)
 
-    def assert_illegal_value(self, guessNumber):
+    def _assert_illegal_value(self, guessNumber):
         if guessNumber is None:
             raise TypeError()
         if len(guessNumber) != 3:
