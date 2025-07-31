@@ -49,4 +49,10 @@ def test_return_2_strikes_0_balls(game):
     game.question = '615'
     assert_matched_number(result=game.guess("695"), solved=False, strikes=2, balls=0)
 
-# def test_return_1_strike_2_balls(game):
+def test_return_1_strike_2_balls(game):
+    game.question = '123'
+    assert_matched_number(result=game.guess("321"), solved=False, strikes=1, balls=2)
+    game.question = '234'
+    assert_matched_number(result=game.guess("243"), solved=False, strikes=1, balls=2)
+    game.question = '615'
+    assert_matched_number(result=game.guess("165"), solved=False, strikes=1, balls=2)
