@@ -3,11 +3,19 @@ from game_result import GameResult
 
 class Game:
     def __init__(self):
-        self.question = ""
+        self._question = ""
+
+    @property
+    def question(self):
+        raise AttributeError("읽을 수 없는 속성")
+
+    @question.setter
+    def question(self,value):
+        self._question = value
 
     def guess(self, guess_number)->GameResult:
         self._assert_illegal_value(guess_number)
-        if guess_number == self.question:
+        if guess_number == self._question:
             return GameResult(True,3,0)
         return None
 
