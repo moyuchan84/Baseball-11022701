@@ -7,11 +7,8 @@ def game()->Game:
     return Game()
 
 def assert_ilegal_argument(game, guess_number):
-    try:
+    with pytest.raises(TypeError):
         game.guess(guess_number)
-        pytest.fail()
-    except TypeError:
-        pass
 
 
 def test_exception_when_invalid_test(game):
